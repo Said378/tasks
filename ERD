@@ -1,0 +1,38 @@
+# User Story Application
+
+## Entities
+
+### User
+- **id**: Long (Primary Key)
+- **username**: String (Unique, Not Null)
+
+### Post
+- **id**: Long (Primary Key)
+- **title**: String (Not Null)
+- **body**: String (Not Null)
+- **user_id**: Long (Foreign Key to User.id, Not Null)
+
+### Review
+- **id**: Long (Primary Key)
+- **comment**: String (Not Null)
+- **rating**: int (Not Null)
+- **post_id**: Long (Foreign Key to Post.id, Not Null)
+- **user_id**: Long (Foreign Key to User.id, Not Null)
+
+## Relationships
+- **User** (1) --- (M) **Post**
+- **Post** (1) --- (M) **Review**
+- **User** (1) --- (M) **Review**
+
+## ERD Diagram
+
+```plaintext
++--------------+       +-------------+       +--------------+
+|    User      |       |    Post     |       |    Review    |
++--------------+       +-------------+       +--------------+
+| id           |<----->| id          |<----->| id           |
+| username     |       | title       |       | comment      |
+|              |       | body        |       | rating       |
+|              |       | user_id     |       | post_id      |
++--------------+       +-------------+       | user_id      |
+                                              +--------------+
