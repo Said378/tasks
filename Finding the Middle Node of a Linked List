@@ -1,0 +1,39 @@
+# Finding the Middle Node of a Linked List
+
+This document describes an algorithm to find the middle node of a singly linked list using two pointers: `slow` and `fast`. The algorithm operates with linear time complexity and constant space complexity.
+
+## Algorithm Description
+
+1. **Initialization:**
+   - Initialize two pointers, `slow` and `fast`, both pointing to the head of the list.
+
+2. **Traversal:**
+   - While `fast` and `fast.next` are not null:
+     - Move `slow` one step forward.
+     - Move `fast` two steps forward.
+
+3. **Completion:**
+   - When `fast` reaches the end of the list, `slow` will be at the middle node.
+
+4. **Return:**
+   - Return the `slow` pointer, which points to the middle node of the list.
+
+## Complexity Analysis
+
+- **Time Complexity:**  
+  The time complexity of this algorithm is `O(n)`, where `n` is the number of nodes in the linked list. This is because we traverse the list only once.
+
+- **Space Complexity:**  
+  The space complexity of this algorithm is `O(1)`, as we are using a constant amount of extra space for the two pointers.
+
+## Example
+
+Consider the linked list: `1 -> 2 -> 3 -> 4 -> 5`
+
+- After the first iteration: `slow` points to `2`, `fast` points to `3`
+- After the second iteration: `slow` points to `3`, `fast` points to `5`
+- When `fast` reaches the end, `slow` points to `3`, which is the middle node of the list.
+
+## Usage
+
+You can use this algorithm in various scenarios where finding the middle node of a linked list is required, such as in certain data processing tasks or algorithmic problems.
